@@ -1,29 +1,25 @@
-my_dict = input("Enter the dictionanry path : ")
-if len(my_dict) == 0:
-	my_dict = './dico-fr.txt' # Edit this line as you wish 
+mon_dict = input("entrer l'emplacement du fichier : ")
+if len(mon_dict) == 0:
+    mon_dict = './dico-fr.txt' # Juste pour cet exercice
 else:
-	pass
-word_to_search_anagram = input("Enter the word you like to search the anagram for : ")
+    pass
+mot_pour_chercher_anagramme = input("entrer le mot pour chercher l'anagramme : ")
+__mot_pour_chercher_anagramme__ = list(mot_pour_chercher_anagramme.lower())
+__mot_pour_chercher_anagramme__.sort()
 
-def anagram_hunter():
-	with open(my_dict,'r') as dictio:
-		words = dictio.readlines()
-	for word in words:
-		word = word.strip("\n")
-
-		if len(word) == len(word_to_search_anagram):
-			state = True
-			for lettre in word_to_search_anagram.lower():
-				if lettre in word.lower():
-					state = True
-					continue
-				else:
-					state = False
-					break
-			if state is True:
-				print(word)
-			else:
-				pass
-		else:
-			pass
-anagram_hunter()
+def chercheur_anagramme():
+    with open(mon_dict,'r') as dictionnaire:
+        mots = dictionnaire.readlines()
+    print("Tout les anagrammes du mot",mot_pour_chercher_anagramme,"sont :")
+    for mot in mots:
+        mot = mot.strip("\n").lower()
+        __mot__ = list(mot)
+        __mot__.sort()
+        if __mot_pour_chercher_anagramme__ == __mot__ :
+            if mot == mot_pour_chercher_anagramme.lower():
+                pass
+            else:
+                print(mot)
+        else:
+            pass
+chercheur_anagramme()
