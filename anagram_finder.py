@@ -12,8 +12,8 @@ def chercheur_anagramme():
         mots = dictionnaire.readlines()
     print("Tout les anagrammes du mot",mot_pour_chercher_anagramme,"sont :")
     for mot in mots:
-        mot = mot.strip("\n").lower()
-        __mot__ = list(mot)
+        mot = mot.strip("\n")
+        __mot__ = list(mot.lower())
         __mot__.sort()
         if __mot_pour_chercher_anagramme__ == __mot__ :
             if mot == mot_pour_chercher_anagramme.lower():
