@@ -1,6 +1,6 @@
 my_dict = input("Enter the dictionanry path : ")
 if len(my_dict) == 0:
-	my_dict = './dico.txt' # Edit this line as you wish 
+	my_dict = './dico-fr.txt' # Edit this line as you wish 
 else:
 	pass
 word_to_search_anagram = input("Enter the word you like to search the anagram for : ")
